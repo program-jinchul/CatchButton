@@ -10,8 +10,9 @@ namespace CatchButton
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // 2-1. 소리재생( System.Media.SystemSounds.Beep.Play() )
             System.Media.SystemSounds.Beep.Play();
-            // 잡았을 때 메세지 박스 메서드(messagebox.show)
+            // 2-2 잡았을 때 메세지 박스 메서드(messagebox.show)
             MessageBox.Show("🎉 축하합니다! 버튼을 잡았습니다!");
         }
 
@@ -29,7 +30,7 @@ namespace CatchButton
             jcButton.Location= new Point(nextX, nextY);
             // 5. 시각적피드백(폼제목표시줄에좌표출력)
             this.Text = $"버튼위치: ({nextX}, {nextY})";
-            
+            System.Media.SystemSounds.Asterisk.Play();
         }
 
         private void Form1_Load(object sender, EventArgs e)
