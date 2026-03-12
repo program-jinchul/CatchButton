@@ -1,3 +1,4 @@
+using System.Media;
 namespace CatchButton
 {
     public partial class Form1 : Form
@@ -9,7 +10,9 @@ namespace CatchButton
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            System.Media.SystemSounds.Beep.Play();
+            // 잡았을 때 메세지 박스 메서드(messagebox.show)
+            MessageBox.Show("🎉 축하합니다! 버튼을 잡았습니다!");
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
@@ -19,13 +22,14 @@ namespace CatchButton
             // 2. 가용영역계산(버튼이폼테두리에걸리지않게보호)
             // ClientSize는타이틀바와테두리를제외한실제흰도화지영역임
             //수정: 버튼이 화면 밖으로 나가지 않게 버튼 크기만큼 여유를 제외한 최대 좌표 계산
-            int maxX = this.ClientSize.Width; int maxY = this.ClientSize.Height;
+            int maxX = Math.Max(0, ClientSize.Width - jcButton.Width); int maxY = Math.Max(0, ClientSize.Height - jcButton.Height);
             // 3. 랜덤좌표추출(0 ~ 최대가용치사이)
             int nextX= rd.Next(0, maxX+1);int nextY= rd.Next(0, maxY+1);
             // 4. 위치할당(새로운Point 객체생성)
             jcButton.Location= new Point(nextX, nextY);
             // 5. 시각적피드백(폼제목표시줄에좌표출력)
             this.Text = $"버튼위치: ({nextX}, {nextY})";
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
