@@ -25,7 +25,7 @@ namespace CatchButton
             // 4. 위치할당(새로운Point 객체생성)
             jcButton.Location= new Point(nextX, nextY);
             // 5. 시각적피드백(폼제목표시줄에좌표출력)
-            this.Text= $"버튼위치: ({nextX}, {nextY})";
+            this.Text = $"버튼위치: ({nextX}, {nextY})";
         }
 
         private void Form1_Load(object sender, EventArgs e)
