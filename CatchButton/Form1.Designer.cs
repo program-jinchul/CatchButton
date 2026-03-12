@@ -28,35 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            jcButton = new Button();
             SuspendLayout();
             // 
-            // button1
+            // jcButton
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.Font = new Font("맑은 고딕", 30F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            button1.ForeColor = Color.Blue;
-            button1.Location = new Point(353, 219);
-            button1.Name = "button1";
-            button1.Size = new Size(517, 232);
-            button1.TabIndex = 0;
-            button1.Text = "나를 잡아봐";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            jcButton.BackColor = SystemColors.ActiveCaption;
+            jcButton.Font = new Font("맑은 고딕", 30F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            jcButton.ForeColor = Color.Blue;
+            jcButton.Location = new Point(353, 219);
+            jcButton.Name = "jcButton";
+            jcButton.Size = new Size(517, 232);
+            jcButton.TabIndex = 0;
+            jcButton.Text = "나를 잡아봐";
+            jcButton.UseVisualStyleBackColor = false;
+            jcButton.Click += button1_Click;
+            jcButton.MouseEnter += button1_MouseEnter;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1349, 702);
-            Controls.Add(button1);
+            Controls.Add(jcButton);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
+        private Button jcButton;
     }
 }
